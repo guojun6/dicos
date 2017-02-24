@@ -1,0 +1,445 @@
+@import 'base';
+@import 'common';
+@import 'loading_25';
+@import 'animate/animated';
+@import 'animate/pulse';
+
+//index
+
+.rule,.rule2{
+    @extend .absolute;
+    background-color: rgba(0,0,0,0.6);
+    &-inner{
+        position: relative;
+        width: 653/750*100%;
+        height: 1123/1334*100%;
+        margin: 0 auto;
+        top: 114/1334*100%;
+        &>ul{
+            width: REM(653);
+            height: 100%;
+            li{
+                position: absolute;
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        &>img{
+            width:100%;
+            height: 100%;
+        }
+        .btn-rule,.btn-rule-hide{
+            position: absolute;
+            width:REM(192);
+            height: REM(98);
+            bottom: REM(12);
+            left: 50%;
+            margin-left: REM(-192/2);
+            @extend .fullBg;
+            background-image: url($URL + "btn_rule.png");
+        }
+    }
+}
+
+
+//coupon
+.coupon{
+    @extend .absolute;
+    @extend .fullBg;
+    background-image: url($URL + "bg_coupon.jpg");
+    z-index: 200;
+    &-inner{
+        width: REM(608);
+        height: 100%;
+        margin: 0 auto;
+        &>div{
+            position: relative;
+            margin: 0 auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &-head{
+        width: REM(608);
+        height: 357/$HEIGHT*100%;
+        z-index: 10;
+    }
+    &-middle{
+        width: REM(530*0.9);
+        height: 530/$HEIGHT*100%;
+        top: -50/$HEIGHT*100%;
+        .middle-girl{
+            position: absolute;
+            width: 197/530*100%;
+            height:197/530*100%;
+            top: 174/530*100%;
+            left: 170/530*100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &-img{
+        top: REM(-192*0.9);
+        width: REM(557*0.9);
+        height: 219/$HEIGHT*100%;
+        z-index: 10;
+    }
+    &-txt{
+        top: -180/$HEIGHT*100%;
+        width: REM(557*0.9);
+        height: 264/$HEIGHT*100%;
+        z-index: 10;
+    }
+    &-btns{
+        width: REM(460*0.9);
+        height:REM(141*0.9);
+        top: REM(-180*0.9);
+        &>div{
+            width: REM(141*0.9);
+            height: REM(141*0.9);
+            @extend .fullBg;
+        }
+        .btn-cards{
+            float: left;
+            background-image: url($URL + 'btn_card.png');
+        }
+        .btn-share{
+            float: right;
+            background-image: url($URL + 'btn_share.png');
+        }
+    }
+}
+
+
+//cards 
+
+.cards{
+    @extend .absolute;
+    @extend .fullBg;
+    z-index: 101;
+    background-image: url($URL + "bg_coupon.jpg");
+    z-index: 999;
+    &-inner{
+        position: relative;
+         width: REM(612);
+         height: 1161/1334*100%;
+         margin: 0 auto;
+         @extend .fullBg;
+        background-image: url($URL + "cards_inner.png");
+        &>ul{
+            position: relative;
+            width: REM(406);
+            height: 600/1161*100%;
+            top: 484/1161*100%;
+            margin: 0 auto;
+            overflow: hidden;
+            li{
+                width: 100%;
+                height: 160/600*100%;
+                margin-bottom: 30/600*100%;
+                @extend .fullBg;
+                background-image: url($URL + 'knoced.png');
+                img{
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                }
+                &.active{
+                    background: none;
+                    img{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .btn-back{
+            position: absolute;
+            width: REM(119*0.9);
+            height: REM(144*0.9);
+            left: 50%;
+            margin-left: REM(-119*0.9/2);
+            bottom: REM(-144*0.9);
+            @extend .fullBg;
+            background-image: url($URL + "btn_back.png");
+        }
+    }
+}
+
+
+//video
+.video{
+    @extend .absolute;
+    @extend .fullBg;
+    z-index: 101;
+    background-image: url($URL + "bg_coupon.jpg");
+    &-inner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url($URL + "video_head.png") center REM(12) no-repeat;
+        @include prefixer(background-size,100% 1024/1334*100%);
+    }
+    .video-box{
+        position: relative;
+        width: REM(578);
+        height: 726/1334*100%;
+        top: 398/1334*100%;
+        padding: 5%;
+        margin: 0 auto;
+        @extend .fullBg;
+        background-image: url($URL + 'video_bg.png');
+        @include prefixer(box-sizing,border-box);
+        &>div{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .video-btns{
+        position: relative;
+        width: REM(540);
+        top: 398/1334*100%;
+        margin: 0 auto;
+        &>div{
+            width: REM(119*0.9);
+            height: REM(144*0.9);
+            @extend .fullBg;
+        }
+    }
+    .btn-get{
+        float: left;
+        background-image: url($URL + "btn_get.png");
+    }
+    .btn-back{
+        float: right;
+        background-image: url($URL + 'btn_back.png');
+    }
+    
+    #poster{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @extend .fullBg;
+        text-align: center;
+        img{
+            position: relative;
+            width: REM(178);
+            height: REM(178);
+            top: 50%;
+            @include prefixer(transform,translateY(-50%)); 
+        }
+    }
+    div.poster1{
+        background-image: url($URL + 'poster1.jpg');
+    }
+     div.poster2{
+        background-image: url($URL + 'poster2.jpg');
+    }
+     div.poster3{
+        background-image: url($URL + 'poster3.jpg');
+    }
+}
+
+
+///canvas
+
+.canvas-girls{
+    position: absolute;
+    width: REM(340);
+    height: REM(93);
+    left: 50%;
+    bottom: REM(12);
+    margin-left: REM(-170);
+    text-align: center;
+    li{
+        position: relative;
+        display: inline-block;
+        width: REM(93);
+        height: REM(93);
+        @extend .fullBg;
+        background-image: url($URL + 'white_girl.png');
+        &.active{
+            background-image: url($URL + 'red_girl.png');
+        }
+        &:nth-child(2){
+            margin: 0 REM(10);
+        }
+        &>img{
+            position: relative;
+            width: REM(64);
+            height: REM(64);
+            top: REM(14);
+        }
+        .btn_video_add{
+            display: none;
+            position: absolute;
+            width: REM(30);
+            height: REM(48);
+            left: 50%;
+            margin-left: REM(-10);
+            top: REM(22);
+            @extend .fullBg;
+            background-image: url($URL + 'btn_video_add.png');
+        }
+        &.active .btn_video_add{
+            display:block;
+        }
+    }
+}
+
+
+.btn-date{
+    position: absolute;
+    width: REM(204);
+    height: REM(204);
+    right: 0;
+    bottom: REM(24);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.date-txt{
+    position: absolute;
+    width: REM(298);
+    height: REM(55);
+    left: REM(160);
+    bottom: 128/1334*100%;
+    @extend .fullBg;
+    background-image: url($URL + 'txt_bg.png');
+    &>li{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        img{
+            position: relative;
+            top: REM(14);
+            height: REM(23);
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &.date-txt-show img{
+            width: REM(252);
+        }
+        &.date-txt-fail img{
+            width: REM(280);
+        }
+        &.date-txt-1 img{
+            width: REM(232);
+        }
+        &.date-txt-2 img{
+            width: REM(236);
+        }
+        &.date-txt-3 img{
+            width: REM(237);
+        }
+    }
+    .date-txt-1{
+        width: REM(298);
+        height: 100%;
+    }
+}
+
+
+.btn-start{
+    position: absolute;
+    width: REM(500);
+    height: 160/1334*100%;
+    left: REM(125);
+    bottom:50/1334*100%;
+}
+
+
+.time-wrap{
+    position: absolute;
+    left: 50%;
+    top: 520/1334*100%;
+    font-size: REM(18);
+    text-align: center;
+    color: #fbc671;
+    @include prefixer(transform,translateX(-20%));
+    #count-time{
+        padding: 0 REM(4);
+    }
+}
+
+
+#canvas1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    background-color: transparent;
+}
+
+
+.show-rule{
+    position: absolute;
+    width: REM(98);
+    height: REM(122);
+    left: REM(540);
+    top: 790/1334*100% ;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//canvas btns
+.btn-card2,.btn-rule2{
+    position: absolute;
+    width: REM(110);
+    height: REM(110);
+    left: REM(4);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.btn-card2{
+    top: 600/1334*100%;
+}
+.btn-rule2{
+    top: 750/1334*100%;
+}
+
+
+//online
+.online{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #000000;
+    .online-box{
+        width: 100%;
+        height: 100%;
+    }
+    .btn-back-video{
+        position: absolute;
+        width: REM(119);
+        height: REM(141);
+        left: 50%;
+        bottom: REM(20);
+        margin-left: REM(-60);
+    }
+}
